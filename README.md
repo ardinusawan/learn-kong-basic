@@ -46,3 +46,24 @@ docker run -d --name kong \
 -p 9444:8444 \
 kong:latest
 ```
+
+5. Check Kong Instance
+```sh
+curl -i http://localhost:9001
+```
+
+The response should be
+```
+HTTP/1.1 200 OK
+Date: Sat, 28 Mar 2020 13:32:50 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Server: kong/2.0.2
+Content-Length: 8821
+X-Kong-Admin-Latency: 1
+
+{"plugins":{"enabled_in_clus.....
+```
+
+Kong is up and ready to use.
