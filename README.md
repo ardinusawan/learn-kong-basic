@@ -1,7 +1,6 @@
 # learn-kong-basic
 
-## Step
-
+## Preparations
 1. Create docker network for kong
 ```sh
 docker network create kong-net
