@@ -13,7 +13,7 @@ docker run -d --name kong-database \
 --network=kong-net \
 -p 5555:5432 \
 -e "POSTGRES_USER=kong" \
--e "POSTGRES_DB=kon" \
+-e "POSTGRES_DB=kong" \
 -e "POSTGRES_PASSWORD=kong" \
 postgres:9.6
 ```
