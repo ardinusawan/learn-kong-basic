@@ -262,3 +262,24 @@ Should response:
     ]
 }
 ```
+
+### Access API customer from KONG
+GET: http://localhost:9000/api/v1/customers
+
+Should response:
+```json
+[
+    {
+        "id": 5,
+        "first_name": "Dodol",
+        "last_name": "Dargombez"
+    },
+    {
+        "id": 6,
+        "first_name": "Nyongot",
+        "last_name": "Gonzales"
+    }
+]
+```
+
+Done!
