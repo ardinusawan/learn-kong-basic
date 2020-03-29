@@ -220,3 +220,45 @@ Response:
     "created_at": 1585495033
 }
 ```
+
+### List routes
+On postman, Kong -> Routes -> GET Routes — List
+
+Should response:
+```json
+{
+    "next": null,
+    "data": [
+        {
+            "id": "1e136893-0608-45d0-9abd-a41708e966dd",
+            "path_handling": "v0",
+            "paths": [
+                "/api/v1/customers"
+            ],
+            "destinations": null,
+            "headers": null,
+            "protocols": [
+                "http",
+                "https"
+            ],
+            "methods": null,
+            "snis": null,
+            "service": {
+                "id": "7da29f51-4a2a-49ba-b3ab-696ef2c87246"
+            },
+            "name": null,
+            "strip_path": true,
+            "preserve_host": false,
+            "regex_priority": 0,
+            "updated_at": 1585495033,
+            "sources": null,
+            "hosts": [
+                "localhost:9000"
+            ],
+            "https_redirect_status_code": 426,
+            "tags": null,
+            "created_at": 1585495033
+        }
+    ]
+}
+```
