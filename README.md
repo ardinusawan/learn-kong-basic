@@ -141,6 +141,7 @@ Import it, and on your postman folder named `Kong` will exist
 
 ### Add service: customers
 Select Kong -> Services -> Services - Create
+
 On postman, make sure your request like this, and got successfully response:
 
 ![Create new services](https://raw.githubusercontent.com/ardinusawan/learn-kong-basic/master/create.png)
