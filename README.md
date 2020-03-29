@@ -126,7 +126,9 @@ This is current structure
 Kong is gateway. Service that has been defined in Kong will be direct to API server that is ready to serve.
 
 For instance:
+
 API server (inside kong_net network): http://192.168.192.4:10000/api/v1/customers
+
 API Kong (host network): http://localhost:9000
 
 On Kong, we set routes path to /api/v1/customers
