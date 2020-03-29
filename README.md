@@ -116,3 +116,8 @@ Connection: keep-alive
 
 [{"id":5,"first_name":"Dodol","last_name":"Dargombez"},{"id":6,"first_name":"Nyongot","last_name":"Gonzales"}]
 ```
+Above respond showing the node.js server API is alive and can serve GET method REST /api/v1/customers
+
+## Setup KONG as API-gateway to API server routing
+This is current structure
+![kong structure](https://raw.githubusercontent.com/ardinusawan/learn-kong-basic/master/kong%20structure.png)
