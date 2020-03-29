@@ -120,4 +120,56 @@ Above respond showing the node.js server API is alive and can serve GET method R
 
 ## Setup KONG as API-gateway to API server routing
 This is current structure
+
 ![kong structure](https://raw.githubusercontent.com/ardinusawan/learn-kong-basic/master/kong%20structure.png)
+
+Kong is gateway. Service that has been defined in Kong will be direct to API server that is ready to serve.
+
+For instance:
+API server (inside kong_net network): http://192.168.192.4:10000/api/v1/customers
+API Kong (host network): http://localhost:9000
+
+On Kong, we set routes path to /api/v1/customers
+
+And set services host to 192.168.192.4:10000, and path /api/v1/customers
+
+So, when client hit Kong http://localhost:9000/api/v1/customers, Kong will proxy it to 172.19.0.4:10000/api/v1/customers
+
+To start please import postman collection file on github [NodeJS-API-KONG](https://github.com/faren/NodeJS-API-KONG) — kong.postman_collection.json.
+
+Import it, and on your postman folder named `Kong` will exist
+
+### Add service: customers
+Select Kong -> Services -> Services - Create
+On postman, make sure your request like this, and got successfully response:
+
+![Create new services](https://raw.githubusercontent.com/ardinusawan/learn-kong-basic/master/create.png)
+
+### List service
+On postman, select Kong -> Services -> Services - List
+
+Response should be:
+```json
+{
+    "next": null,
+    "data": [
+        {
+            "host": "192.168.192.4",
+            "created_at": 1585491636,
+            "connect_timeout": 60000,
+            "id": "7da29f51-4a2a-49ba-b3ab-696ef2c87246",
+            "protocol": "http",
+            "name": "api-v1-customers",
+            "read_timeout": 60000,
+            "port": 10000,
+            "path": "/api/v1/customers",
+            "updated_at": 1585491636,
+            "retries": 5,
+            "write_timeout": 60000,
+            "tags": null,
+            "client_certificate": null
+        }
+    ]
+}
+```
+Now we successfully created service customers! Huray!!
